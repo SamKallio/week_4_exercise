@@ -85,16 +85,6 @@ function submitRecipe() {
 function initializeCode() {
   const clearImages = document.getElementById("image-input");
   clearImages.value = "";
-
-  fetch("http://localhost:3000/recipe/Pizza")
-    .then((response) => response.json())
-    .then((data) => {
-      if (data) {
-        displayRecipe(data);
-      } else {
-        console.log("Something went wrong when trying to fetch recipe!");
-      }
-    });
 }
 
 function displayRecipe(recipe) {
