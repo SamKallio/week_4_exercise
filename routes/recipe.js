@@ -32,9 +32,7 @@ router.post("/", (req, res) => {
     res.json(getFood);
     console.log("Works");
   } else {
-    res.send(
-      "We couldn't add the food properly. Check the data you sent into the server that it is in correct format!"
-    );
+    res.send(req.body);
   }
 });
 
