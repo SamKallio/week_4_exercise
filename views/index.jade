@@ -1,0 +1,23 @@
+extends layout
+append head 
+  script(src=('/../javascripts/front.js') defer type='text/javascript')
+  script(src=('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'))
+  in
+block content
+  nav 
+    div.nav-wrapper.col
+      div.container.col
+        h3 Recipes
+        div#view-recipe.col
+        div#add-recipe.col
+          p Recipe Name
+          input#name-text(type="text")
+          h4 ingredients 
+          textarea#ingredients-text
+          button#add-ingredient.btn Add ingredient 
+          h4 instructions
+          textarea#instructions-text
+          button#add-instruction.btn Add instruction 
+          button#submit.btn(type="submit") Submit
+          input#image-input(type="file" accept="image/png, image/gif, image/jpeg" multiple)
+
