@@ -19,9 +19,13 @@ const recipes = [
 
 router.get("/:food", function (req, res) {
   console.log(req.params.food);
-  //const getFood = recipes.find((food) => food.name === req.params.food);
-  //console.log(getFood);
-  res.json({ name: req.params.food });
+  const getFood = recipes.find((food) => food.name === req.params.food);
+
+  if (getFood) {
+    res.send(getFood);
+  } else {
+    res.json({ name: req.params.food });
+  }
 });
 
 router.post("/", (req, res) => {
