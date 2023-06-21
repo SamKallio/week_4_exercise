@@ -24,12 +24,12 @@ router.get("/:food", function (req, res) {
   res.send(getFood);
 });
 
-router.post("//", (req, res) => {
+router.post("/", (req, res) => {
   recipes.push(req.body);
   const getFood = recipes.find((food) => food.name === req.body.name);
 
   if (getFood) {
-    res.send(getFood);
+    res.json(getFood);
     console.log("Works");
   } else {
     res.send(

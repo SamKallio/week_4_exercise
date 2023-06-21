@@ -48,6 +48,7 @@ function submitRecipe() {
       .then((response) => response.text())
       .then((data) => console.log(data));
   }
+
   if (
     ingredientsList.length < 1 ||
     instructionsList.length < 1 ||
@@ -62,7 +63,7 @@ function submitRecipe() {
     instructions: instructionsList,
   };
 
-  fetch("http://localhost:3000/recipe", {
+  fetch("http://localhost:3000/recipe/", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -99,10 +100,12 @@ function initializeCode() {
 function displayRecipe(recipe) {
   const recipeName = document.createElement("h1");
   const ingredientTitle = document.createElement("h4");
+  const recipeIngredients = document.createElement("ul");
   const instructionTitle = document.createElement("h4");
   const recipeInstructions = document.createElement("ul");
-  const recipeIngredients = document.createElement("ul");
   const viewRecipe = document.getElementById("view-recipe");
+
+  viewRecipe.textContent = "";
 
   recipeInstructions.style.listStyle = "decimal";
 
